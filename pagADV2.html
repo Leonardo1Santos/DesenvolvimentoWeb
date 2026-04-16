@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CEUB - Advocacia</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap 5 (para o formulário) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Estilos específicos do formulário */
+        .form-container {
+            background: #fff;
+            padding: 32px 36px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-container h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        .form-control,
+        .form-select {
+            font-size: 0.9rem;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+            color: #495057;
+        }
+
+        .form-control::placeholder {
+            color: #adb5bd;
+        }
+
+        .input-group-text {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            border-right: none;
+        }
+
+        .input-group .form-control {
+            border-left: none;
+        }
+
+        .form-text {
+            font-size: 0.78rem;
+            color: #6c757d;
+        }
+
+        .form-check-label {
+            font-size: 0.875rem;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #114188;
+            border-color: #0d6efd;
+            font-size: 0.9rem;
+            padding: 7px 22px;
+            border-radius: 6px;
+        }
+
+        .btn-outline-secondary {
+            font-size: 0.9rem;
+            padding: 7px 22px;
+            border-radius: 6px;
+        }
+        
+        /* Ajuste para compatibilidade Bootstrap 4 e 5 */
+        #content {
+            background-color: #f0f2f5;
+        }
+        
+        .container-fluid {
+            padding: 24px;
+        }
+        
+        /* Estilo para ícones no menu */
+        .sidebar .nav-link i {
+            margin-right: 0.5rem;
+            width: 1.25rem;
+            text-align: center;
+        }
+        
+        /* Ajuste para o logo */
+        .sidebar-brand img {
+            max-height: 45px;
+            width: auto;
+        }
+        
+        .sidebar-brand p {
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* Estilo para os cards do dashboard */
+        .dashboard-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .card-icon i {
+            font-size: 24px;
+            color: white;
+        }
+        
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+        
+        .card-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .card-subtitle {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+        
+        .progress-container {
+            margin-top: 12px;
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #e9ecef;
+        }
+        
+        .progress-bar {
+            border-radius: 10px;
+        }
+        
+        .cadastre-se-btn {
+            margin-top: 16px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            padding: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .cadastre-se-btn:hover {
+            transform: scale(1.02);
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar - Menu Advocacia -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <img src="logo.png" alt="CEUB" style="max-height: 50px; width: auto;">
+                <p>SISTEM. ADV. CEUB 1.0</p>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                INTERFACE
+            </div>
+
+            <!-- Nav Item - Components -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                UTILITIES
+            </div>
+
+            <!-- Nav Item - ADDONS -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>ADDONS</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+            <div class="sidebar-card d-none d-lg-flex">
+                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+                <p class="text-center mb-2"><strong>CEUB Advocacia</strong> Sistema completo para gestão jurídica.</p>
+                <a class="btn btn-success btn-sm" href="#">Agende uma demo</a>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar processos, clientes..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Buscar..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alertas de Prazo -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alertas de Prazo -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alertas -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alertas de Prazos
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-danger">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">15/04/2026</div>
+                                        <span class="font-weight-bold">Processo 0001234-56.2026.8.07.0001: Prazo final amanhã</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-calendar-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">18/04/2026</div>
+                                        <span class="font-weight-bold">Audiência de Conciliação - 5ª Vara Cível</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">20/04/2026</div>
+                                        Manifestação processual pendente em 3 processos
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Ver todos os alertas</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Mensagens -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Mensagens
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Dr., preciso de uma consultoria sobre o caso.</div>
+                                        <div class="small text-gray-500">João Silva · 1h</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                            alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Documentos do processo já foram anexados.</div>
+                                        <div class="small text-gray-500">Maria Oliveira · 3h</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Reunião confirmada para amanhã às 14h.</div>
+                                        <div class="small text-gray-500">Carlos Santos · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Ver todas as mensagens</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dr. Leonardo</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Configurações
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Registro de Atividades
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <!-- Cards do Dashboard -->
+                    <div class="row mb-4">
+                        <!-- Card - Seus Agendamentos -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card dashboard-card">
+                                <div class="card-body">
+                                    <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="card-title">SEUS AGENDAMENTOS</div>
+                                    <div class="card-value">—</div>
+                                    <div class="card-subtitle">Próximos compromissos</div>
+                                    <button class="btn btn-outline-primary cadastre-se-btn">
+                                        <i class="fas fa-plus-circle mr-1"></i> Cadastra-se
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card - Rendimentos (Anual) -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card dashboard-card">
+                                <div class="card-body">
+                                    <div class="card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="card-title">RENDIMENTOS (ANUAL)</div>
+                                    <div class="card-value">—</div>
+                                    <div class="card-subtitle">Total acumulado 2026</div>
+                                    <button class="btn btn-outline-primary cadastre-se-btn">
+                                        <i class="fas fa-plus-circle mr-1"></i> Cadastra-se
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card - Processos -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card dashboard-card">
+                                <div class="card-body">
+                                    <div class="card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                        <i class="fas fa-gavel"></i>
+                                    </div>
+                                    <div class="card-title">PROCESSOS</div>
+                                    <div class="card-value">24</div>
+                                    <div class="card-subtitle">Processos ativos</div>
+                                    <div class="progress-container">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <span class="small text-muted">Progresso geral</span>
+                                            <span class="small font-weight-bold">50%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" 
+                                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card - Notificações -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card dashboard-card">
+                                <div class="card-body">
+                                    <div class="card-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="card-title">NOTIFICAÇÕES</div>
+                                    <div class="card-value">—</div>
+                                    <div class="card-subtitle">Alertas e atualizações</div>
+                                    <button class="btn btn-outline-primary cadastre-se-btn">
+                                        <i class="fas fa-plus-circle mr-1"></i> Cadastra-se
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Título do Formulário -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h4 mb-0 text-gray-800">Inscrição / Contato</h1>
+                    </div>
+
+                    <!-- Formulário de Inscrição -->
+                    <div class="form-container">
+                        <p class="text-muted small mb-4">
+                            Preencha os campos abaixo. Campos marcados com <span class="text-danger">*</span> são obrigatórios.
+                        </p>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="nome_aluno" class="form-label required">Nome</label>
+                                <input type="text" class="form-control" id="nome_aluno" name="nome_aluno" placeholder="João" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="sobrenome" class="form-label required">Sobrenome</label>
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Silva" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label required">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(11) 91234-5678">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cpf" class="form-label required">CPF</label>
+                                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nascimento" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="nascimento" name="nascimento">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="senha" class="form-label required">Senha</label>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="funcao" class="form-label">Função</label>
+                                <select class="form-select" id="funcao" name="funcao">
+                                    <option selected disabled>Escolha...</option>
+                                    <option value="1">Aluno</option>
+                                    <option value="2">Professor</option>
+                                    <option value="3">Advogado</option>
+                                    <option value="4">Estagiário</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuário</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="nomeusuario">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="mensagem" name="mensagem" rows="3" placeholder="Escreva aqui..."></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="curriculo" class="form-label">Upload de Currículo (PDF)</label>
+                            <input class="form-control" type="file" id="curriculo" name="curriculo" accept=".pdf">
+                            <div class="form-text">Máx. 5MB. Apenas PDF.</div>
+                        </div>
+
+                        <div class="mb-4 d-flex flex-wrap gap-4 align-items-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="novidades" name="novidades">
+                                <label class="form-check-label" for="novidades">Quero receber novidades</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contato" id="contatoEmail" checked>
+                                <label class="form-check-label" for="contatoEmail">Contato por email</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contato" id="contatoTelefone">
+                                <label class="form-check-label" for="contatoTelefone">Contato por telefone</label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary px-4">Enviar</button>
+                            <button type="reset" class="btn btn-outline-secondary px-4 ms-2">Limpar</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; CEUB 2026</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deseja sair?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione "Sair" abaixo para encerrar sua sessão.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="login.html">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    
+    <!-- Bootstrap 5 JS (para o formulário) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
